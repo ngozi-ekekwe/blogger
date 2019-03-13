@@ -1,0 +1,20 @@
+{
+  "name": "blogger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ngozi-ekekwe/blogger.git",
+  "author": "ngozi-ekekwe <ngozi.ekekwe@andela.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "next": "^8.0.3",
+    "next-routes": "^1.4.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "next start"
+  }
+}
