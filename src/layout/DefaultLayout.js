@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Header from '../components/Header';
 
 const DefaultLayout = ({children}) => {
   return (
-    <div>
-      <p>Default Layout</p>
+    <Fragment>
+      <Header />
       {children}
-    </div>
+    </Fragment>
   );
 };
 
