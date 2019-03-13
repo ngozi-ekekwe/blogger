@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 
-const home = () => {
+const profile = () => {
   return (
     <DefaultLayout>
-      hello world
+      profile
     </DefaultLayout>
   );
 };
 
-export default home;
+export default profile;

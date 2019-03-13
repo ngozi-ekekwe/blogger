@@ -1,12 +1,12 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 
-const home = () => {
+const blogs = () => {
   return (
     <DefaultLayout>
-      hello world
+      all blogs
     </DefaultLayout>
   );
 };
 
-export default home;
+export default blogs;
