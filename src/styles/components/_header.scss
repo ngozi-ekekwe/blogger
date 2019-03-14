@@ -1,0 +1,23 @@
+header {
+  background-color: #563d7c;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  color: white;
+  font-family: 'Nunito';
+}
+
+nav {
+  display: flex;
+}
+
+.nav-item {
+  & + .nav-item {
+    margin-left: 2rem;
+  }
+
+  &.active {
+  }
+}
