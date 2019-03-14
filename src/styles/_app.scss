@@ -1,0 +1,8 @@
+.page-container {
+  min-height: calc(100vh - 110px);
+  padding-bottom: 6rem;
+
+  @include media-breakpoint-down(lg) {
+    padding-bottom: 2.4rem;
+  }
+}

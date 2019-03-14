@@ -9,6 +9,7 @@ const server = express();
 const app = nextJs({ dev, dir: './src' });
 const appHandler = routes.getRequestHandler(app);
 
+
 app.prepare().then(() => {
 
   // Web app routes

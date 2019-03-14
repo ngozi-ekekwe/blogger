@@ -1,0 +1,28 @@
+.landing-section {
+  min-height: 60vw;
+  display: flex;
+}
+
+.landing-image {
+  background-image: url('/static/hand.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+
+.landing-section h1 {
+    font-size: 30px;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0 2.4rem 0;
+    line-height: 1em
+}
+
+.landing-content {
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+}
+
