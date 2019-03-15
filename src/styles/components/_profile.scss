@@ -1,0 +1,27 @@
+.user-profile {
+  // border: 1px solid red;
+  display: flex;
+  margin-top: 2rem;
+}
+
+.avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 2px solid grey;
+  background-image: url('/static/person.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.flex-0 {
+  flex: 0
+}
+
+.flex-1 {
+  flex: 1
+}
+
+.profile-details {
+  margin-left: 1rem;
+}

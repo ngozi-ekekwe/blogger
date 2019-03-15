@@ -8,13 +8,10 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="nav-brand">FOOD BLOGGER</div>
+        <div className="nav-brand">
+          <Link route='home'>FOOD BLOGGER</Link>
+        </div>
         <nav>
-          <ul className="nav-item">
-            <Link route='home'>
-              <a> Become a member </a>
-            </Link>
-          </ul>
           <ul className="nav-item">
             <Link route='login'><a>Sign in</a></Link>
           </ul>
