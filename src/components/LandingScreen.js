@@ -3,7 +3,7 @@ import Button from './Button'
 
 const LandingScreen = () => {
   return (
-    <div className="landing-section">
+    <div className="row landing-section">
       <div className="col-12 col-lg-6 landing-image"></div>
       <div className="col-12 col-lg-6">
         <div className="landing-content">

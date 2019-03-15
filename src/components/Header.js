@@ -1,19 +1,30 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-
+import React, { Component } from 'react';
+import { Link } from '../routes';
 import '../styles/style.scss';
 
-const Header = () => {
-  return (
-    <header>
+class Header extends Component {
+
+
+  render() {
+    return (
+      <header>
         <div className="nav-brand">BLOGGER</div>
         <nav>
-          <ul className="nav-item"><li>Become a member</li></ul>
-          <ul className="nav-item"><li>Sign in</li></ul>
-          <ul className="nav-item active"><li>Get Started</li></ul>
+          <ul className="nav-item">
+            <Link route='home'>
+              <a> Become a member </a>
+            </Link>
+          </ul>
+          <ul className="nav-item">
+            <Link route='login'><a>Sign in</a></Link>
+          </ul>
+          <ul className="nav-item active">
+            <Link route='signup'><a>Get Started</a></Link>
+          </ul>
         </nav>
-    </header>
-  );
-};
+      </header>
+    );
+  }
+}
 
 export default Header;
