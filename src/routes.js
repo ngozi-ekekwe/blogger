@@ -8,3 +8,4 @@ routes
   .add({ profile: 'profile', pattern: '/profile/slug', page: 'profile'})
   .add({ profile: 'login', pattern: '/login', page: 'login'})
   .add({ profile: 'signup', pattern: '/signup', page: 'signup'})
+  .add({ profile: 'new-story', pattern: '/new-story', page: 'new-story'})

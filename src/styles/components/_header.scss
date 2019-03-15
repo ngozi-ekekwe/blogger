@@ -6,11 +6,19 @@ header {
   align-items: center;
   padding: 0 1rem;
   color: black;
-  font-family: 'Cabin';
+  font-family: 'Roboto';
 }
+
+ a {
+   text-decoration: none;
+ }
 
 nav {
   display: flex;
+}
+
+.nav-item a {
+  text-decoration: none;
 }
 
 .nav-item {

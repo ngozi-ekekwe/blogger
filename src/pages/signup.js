@@ -15,6 +15,11 @@ const fields = [
     type: 'text'
   },
   {
+    label: 'Email',
+    placeHolder: 'Enter your email',
+    type: 'email'
+  },
+  {
     label: 'Bio',
     placeHolder: 'Enter your bio',
     type: 'text'

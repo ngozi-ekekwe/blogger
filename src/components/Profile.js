@@ -10,8 +10,8 @@ const Profile = () => {
         </Link>
       </div>
       <div className="flex-1 profile-details">
-          <p>Ngozi Ekekwe</p>
-          <div>March 11, 2018 15 mins read</div>
+          <p className="profile-name">Ngozi Ekekwe</p>
+          <div className="date">March 11, 2018 15 mins read</div>
       </div>
     </div>
   );

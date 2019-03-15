@@ -2,7 +2,8 @@
   // border: 1px solid red;
   display: flex;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+  font-family: 'Roboto';
 }
 
 .avatar {
@@ -26,4 +27,15 @@
 .profile-details {
   margin-left: 1rem;
   line-height: 1;
+}
+
+.profile-name {
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+
+.date {
+  color: grey;
+  font-size: 11px;
+  padding-top: 0.3rem;
 }
