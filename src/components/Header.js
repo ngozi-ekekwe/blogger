@@ -8,7 +8,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <div className="nav-brand">BLOGGER</div>
+        <div className="nav-brand">FOOD BLOGGER</div>
         <nav>
           <ul className="nav-item">
             <Link route='home'>

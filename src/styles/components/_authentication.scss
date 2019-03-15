@@ -1,0 +1,28 @@
+.authentication-section {
+  min-height: 50vw;
+  display: flex;
+}
+
+.authentication-image {
+  background-image: url('/static/yellow.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+
+.authentication-section h1 {
+    font-size: 30px;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 0 2.4rem 0;
+    line-height: 1em
+}
+
+.authentication-content {
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+}
+
