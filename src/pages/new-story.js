@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import DefaultLayout from '../layout/DefaultLayout';
 import Authentication from '../components/Authentication';
 import InputWrapper from '../components/InputWrapper';
@@ -13,21 +13,29 @@ const fields = [
   },
 ]
 
-const NewStory = () => {
-  return (
-    <DefaultLayout>
-      <div className="mt-5">
-        <Container>
-          <InputWrapper>
-            <input placeholder="Title" />
-          </InputWrapper>
+class NewStory extends Component {
 
-          <Button title="publish" />
+  constructor(props) {
+    super(props);
+  }
 
-        </Container>
-      </div>
-    </DefaultLayout>
-  );
-};
+  render() {
+    return (
+      <DefaultLayout>
+        <div className="mt-5">
+          <Container>
+            <InputWrapper>
+              <input placeholder="Title" />
+            </InputWrapper>
+              <textarea placeholder="Write new story" />
+            <div className="button-container">
+              <Button title="publish" />
+            </div>
+          </Container>
+        </div>
+      </DefaultLayout>
+    );
+  }
+}
 
 export default NewStory;

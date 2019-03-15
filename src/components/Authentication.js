@@ -16,7 +16,9 @@ class Authentication extends Component {
             <h1>{title}</h1>
             {children}
           </div>
-            <Button title={buttonText} />          
+          <div className="button-container">
+            <Button title={buttonText} />   
+          </div>       
         </div>
       </div>
     );
