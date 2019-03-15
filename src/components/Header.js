@@ -9,14 +9,14 @@ class Header extends Component {
     return (
       <header>
         <div className="nav-brand">
-          <Link route='home'>FOOD BLOGGER</Link>
+          <Link route='/home'>FOOD BLOGGER</Link>
         </div>
         <nav>
           <ul className="nav-item">
-            <Link route='login'><a>Sign in</a></Link>
+            <Link route='/login'><a>Sign in</a></Link>
           </ul>
           <ul className="nav-item active">
-            <Link route='signup'><a>Get Started</a></Link>
+            <Link route='/signup'><a>Get Started</a></Link>
           </ul>
         </nav>
       </header>
