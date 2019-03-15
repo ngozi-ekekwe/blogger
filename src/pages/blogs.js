@@ -1,10 +1,14 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import DefaultLayout from '../layout/DefaultLayout';
+import CardListing from '../components/CardListing';
 
 const blogs = () => {
   return (
     <DefaultLayout>
-      all blogs
+      <Container>
+        <CardListing />
+      </Container>
     </DefaultLayout>
   );
 };
