@@ -36,6 +36,10 @@ class Signup extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
       <DefaultLayout>
