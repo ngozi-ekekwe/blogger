@@ -1,20 +1,12 @@
 import React from 'react';
 import Card from './Card';
 
-const CardListing = () => {
+const CardListing = ({stories}) => {
   return (
     <div className="row card-listing">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      { stories && stories.map((story) => {
+        return <Card  title={story.title} content={story.content}/>
+      })}
     </div>
   );
 };

@@ -1,8 +1,7 @@
 import { agent } from 'superagent';
 import Settings from '../config/settings';
 
-
-const apiEndpoint = Settings.apiEndpoint
+const apiEndpoint = 'https://blogger-server.herokuapp.com'
 
 export const endpoint = (path) => {
   if (path) {
@@ -10,8 +9,6 @@ export const endpoint = (path) => {
   }
   return apiEndpoint;
 }
-
-console.log(endpoint('/stories'), 'endpointendpointendpoint')
 
 const setHeaderMethod = (requestType, requestBody, token) => {
   const newBody = JSON.stringify(requestBody)
@@ -28,7 +25,6 @@ const setHeaderMethod = (requestType, requestBody, token) => {
 // Request methods helpers
 export const apiGetRequest = (path) =>
   fetch(endpoint(path), setHeaderMethod('GET')).then((res) => {
-    console.log(res, '============RES')
     return res.json()
   })
 export const apiPostRequest = (path, body) =>

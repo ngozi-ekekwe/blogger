@@ -8,11 +8,10 @@ import { getAllStories } from '../services/api';
 export function* getAllStoriesSaga() {
   try {
     const stories = yield call(getAllStories);
-    console.log(stories, '=================>')
-    const data = users ? stories.body : [];
+    const data = stories ? stories.data : [];
+    console.log(data)
     yield put(storiesActions.getAllStoriesSuccess(data))
   }catch(err) {
-    console.log(err, '===========> erro')
     yield put(storiesActions.getAllStoriesFaiLure(err))
   }
 }

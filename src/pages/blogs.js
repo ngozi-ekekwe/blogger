@@ -15,10 +15,12 @@ class Blogs extends Component {
   }
 
   render() {
+    console.log(this.props, 'my props')
+    const { stories } = this.props;
     return (
       <DefaultLayout>
         <Container>
-          <CardListing  />
+          <CardListing stories={stories}  />
         </Container>
       </DefaultLayout>
     );
@@ -26,9 +28,8 @@ class Blogs extends Component {
 }
 
 function mapStateToProps(state, props) {
-  // console.log(state, 'this is ststae')
   return {
-    // stories: state.,
+    stories: state.storyReducer.stories
   };
 }
 
