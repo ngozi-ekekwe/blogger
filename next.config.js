@@ -5,7 +5,6 @@ require('dotenv').config();
 module.exports = withCss(withSass({
   serverRuntimeConfig: {
     API_ENDPOINT: process.env.API_ENDPOINT,
-    JWT_SECRET: process.env.JWT_SECRET,
   },
   webpack(config, { isServer }) {
     if (process.env.ANALYZE) {
