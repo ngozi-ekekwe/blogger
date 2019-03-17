@@ -15,7 +15,6 @@ class Blogs extends Component {
   }
 
   render() {
-    console.log(this.props, 'my props')
     const { stories } = this.props;
     return (
       <DefaultLayout>

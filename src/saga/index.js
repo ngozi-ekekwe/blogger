@@ -1,6 +1,6 @@
 import { all, fork } from 'redux-saga/effects';
 import { watchLoginUser, watchCreateUser } from './customerSaga'
-import { watchListAllStories } from './storiesSaga';
+import { watchListAllStories, watchCreateStories } from './storiesSaga';
 
 
 
@@ -8,6 +8,7 @@ export default function* rootSaga() {
   yield all([
     fork(watchLoginUser),
     fork(watchListAllStories),
-    fork(watchCreateUser)
+    fork(watchCreateUser),
+    fork(watchCreateStories)
   ]);
 }

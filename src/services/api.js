@@ -57,3 +57,8 @@ export function getAllStories() {
   const path = '/stories';
   return apiGetRequest(path);
 }
+
+export function createStory(story) {
+  const path = '/api/new-story';
+  return apiPostRequest(path, story)
+}

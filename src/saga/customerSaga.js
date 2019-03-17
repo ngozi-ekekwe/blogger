@@ -28,10 +28,8 @@ export function* loginUserSaga(action) {
 }
 
 export function* createUserSaga(action) {
-  console.log(action, 'this is action')
   try {
     const user = yield call(createUser, action)
-    console.log(user)
     const newUser = user.token ? user : []
     yield put(userActions.createUserSuccess, newUser)
   }
