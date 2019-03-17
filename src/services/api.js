@@ -10,8 +10,9 @@ export const endpoint = (path) => {
   return apiEndpoint;
 }
 
-const setHeaderMethod = (requestType, requestBody, token) => {
+const setHeaderMethod = (requestType, requestBody) => {
   const newBody = JSON.stringify(requestBody)
+  const token = localStorage.getItem('token')
   return {
     method: requestType,
     headers: new Headers({
@@ -61,4 +62,9 @@ export function getAllStories() {
 export function createStory(story) {
   const path = '/api/new-story';
   return apiPostRequest(path, story)
+}
+
+export function getSingleStory(slug) {
+  const path = `/story/${slug}`;
+  return apiGetRequest(path)
 }

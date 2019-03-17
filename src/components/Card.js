@@ -3,9 +3,9 @@ import Profile from '../components/Profile'
 import { Link } from '../routes';
 
 const Card = (props) => {
-  const { title, content } = props;
+  const { title, content, slug } = props;
   return (
-    <Link route="/blog/hello">
+    <Link href={`/blog/${slug}`}>
       <div className="col-12 col-lg-6 card">
         <div className="row">
           <div className="col-8">

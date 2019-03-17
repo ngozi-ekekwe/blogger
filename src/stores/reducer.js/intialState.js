@@ -6,6 +6,7 @@ export default {
     isAuthenticated: false
   },
   stories: {
-    stories: []
+    stories: [],
+    story: {}
   }
 };

@@ -2,7 +2,7 @@ import { put, take, call } from 'redux-saga/effects';
 
 import * as storiesActions from '../stores/actions/storyActions';
 
-import { getAllStories, createStory } from '../services/api';
+import { getAllStories, createStory, getSingleStory } from '../services/api';
 
 
 export function* getAllStoriesSaga() {
@@ -25,6 +25,27 @@ export function* createStorySaga(action) {
   }
 }
 
+
+export function* getStorySaga(slug) {
+  try{
+    const story = yield call(getSingleStory, slug);
+    const newStory = story.blog ? story.blog : [];
+    yield put(storiesActions.getSingleStorySuccess(newStory))
+  }catch(err) {
+    yield put(storiesActions.createStoryFailure(err))
+  }
+}
+
+
+// watch getAllStoriesSaga
+export function* watchGetStorySaga() {
+  while (true) {
+    const action = yield take('GET_STORY');
+    yield call(getStorySaga, action.slug);
+  }
+}
+
+
 // watch getAllStoriesSaga
 export function* watchListAllStories() {
   while (true) {
@@ -37,7 +58,6 @@ export function* watchListAllStories() {
 export function* watchCreateStories() {
   while (true) {
     const action = yield take('CREATE_STORY');
-    yield take('CREATE_STORY');
     yield call(createStorySaga, action.story);
   }
 }

@@ -35,3 +35,9 @@ export const getAllStoriesFaiLure  = (error) => {
     type: types.GET_ALL_STORIES_FAILURE, error
   }
 }
+
+export const getSingleStorySuccess = (story) => {
+  return {
+    type: types.GET_STORY_SUCCESS, story
+  }
+}

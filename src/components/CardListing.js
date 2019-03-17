@@ -5,7 +5,7 @@ const CardListing = ({stories}) => {
   return (
     <div className="row card-listing">
       { stories && stories.map((story) => {
-        return <Card  title={story.title} content={story.content}/>
+        return <Card  title={story.title} content={story.content} slug={story.slug}/>
       })}
     </div>
   );

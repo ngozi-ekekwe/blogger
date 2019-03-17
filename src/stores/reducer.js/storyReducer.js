@@ -9,6 +9,13 @@ export default function storyReducer(state = initialState.stories, action) {
         stories: action.stories
       }
     }
+
+    case types.GET_STORY_SUCCESS: {
+      return {
+        ...state,
+        story: action.story
+      }
+    }
     default: {
       return state;
     }
