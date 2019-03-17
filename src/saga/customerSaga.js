@@ -2,7 +2,7 @@ import { put, take, call } from 'redux-saga/effects';
 
 import * as userActions from '../stores/actions/userActions';
 
-import { createUser, listAllUsers } from '../services/api';
+import { createUser, listAllUsers, loginUser} from '../services/api';
 
 
 export function* listAllUsersSaga() {
@@ -16,10 +16,21 @@ export function* listAllUsersSaga() {
   }
 }
 
+export function* loginUserSaga(action) {
+  try {
+    const userInfo = yield call(loginUser, action.user)
+    userInfo.token && localStorage.setItem('token', userInfo.token)
+    yield put(userActions.loginUserSuccess())
+  }
+  catch(err) {
+    yield put(userActions.loginUserFailure(err))
+  }
+}
+
 // watch fetch orders
-export function* watchListAllUsers() {
+export function* watchLoginUser() {
   while (true) {
-    yield take('LIST_ALL_USERS');
-    yield call(listAllUsersSaga);
+    const action = yield take('LOGIN_USER');
+    yield call(loginUserSaga, action);
   }
 }

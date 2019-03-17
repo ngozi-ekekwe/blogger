@@ -47,7 +47,7 @@ export const loginUser = (user) => {
 
 export const loginUserSuccess = () => {
   return {
-    type: types.LOGIN_SUCCESS
+    type: types.LOGIN_SUCCESS,
   }
 }
 

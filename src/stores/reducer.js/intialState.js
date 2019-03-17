@@ -2,7 +2,8 @@ export default {
   user: {
     users: [],
     user: {},
-    error: null
+    error: null,
+    isAuthenticated: false
   },
   stories: {
     stories: []

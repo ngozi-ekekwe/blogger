@@ -1,4 +1,5 @@
-import React from 'react';
+import React , { Component } from 'react';
+import { connect } from 'react-redux';
 import DefaultLayout from '../layout/DefaultLayout';
 import Authentication from '../components/Authentication';
 import InputWrapper from '../components/InputWrapper';
@@ -6,32 +7,66 @@ import InputWrapper from '../components/InputWrapper';
 const fields = [
   {
     label: 'Email',
+    name: 'email',
     placeHolder: 'Enter your email',
     type: 'text'
   },
   {
     label: 'Password',
+    name: 'password',
     placeHolder: 'password',
     type: "password"
   }
 ]
 
-const login = () => {
-  return (
-    <DefaultLayout>
-      <Authentication title="Login" buttonText="Login">
-        {
-          fields.map((field) => {
-            return (
-              <InputWrapper>
-                <input placeholder={field.placeHolder} />
-              </InputWrapper>
-            )
-          })
-        }
-      </Authentication>
-    </DefaultLayout>
-  );
-};
+class Login extends Component {
+  constructor(props) {
+    super(props);
 
-export default login;
+    this.state = {
+      email: null,
+      password: null
+    }
+  }
+
+  onChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onClick = () => {
+    const { loginUser } = this.props;
+    return loginUser(this.state)
+  }
+
+  render() {
+    return (
+      <DefaultLayout>
+        <Authentication title="Login" buttonText="Login" onButtonClick={this.onClick}>
+          {
+            fields.map((field) => {
+              return (
+                <InputWrapper>
+                  <input placeholder={field.placeHolder} onChange={this.onChange} name={field.name} />
+                </InputWrapper>
+              )
+            })
+          }
+        </Authentication>
+      </DefaultLayout>
+    );
+  }
+}
+
+function mapStateToProps(state, props) {
+  return {
+    isAuthenticated: state.userReducer.isAuthenticated
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    loginUser: (user) => dispatch({ type: 'LOGIN_USER', user })
+  });
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
