@@ -27,7 +27,27 @@ export function* loginUserSaga(action) {
   }
 }
 
-// watch fetch orders
+export function* createUserSaga(action) {
+  console.log(action, 'this is action')
+  try {
+    const user = yield call(createUser, action)
+    console.log(user)
+    const newUser = user.token ? user : []
+    yield put(userActions.createUserSuccess, newUser)
+  }
+  catch(err) {
+    yield put(userActions.createUserFailure(err))
+  }
+}
+
+export function* watchCreateUser() {
+  while (true) {
+    const action = yield take('CREATE_USER');
+    yield call(createUserSaga, action.user);
+  }
+}
+
+
 export function* watchLoginUser() {
   while (true) {
     const action = yield take('LOGIN_USER');

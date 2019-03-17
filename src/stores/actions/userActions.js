@@ -1,11 +1,5 @@
 import * as types from '../actionTypes';
 
-export const createUser = () => {
-  return {
-    type: types.CREATE_USER
-  }
-}
-
 export const createUserSuccess = (user) => {
   return {
     type: types.CREATE_USER_SUCCESS, user

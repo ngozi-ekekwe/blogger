@@ -46,7 +46,7 @@ class Login extends Component {
             fields.map((field) => {
               return (
                 <InputWrapper>
-                  <input placeholder={field.placeHolder} onChange={this.onChange} name={field.name} />
+                  <input placeholder={field.placeHolder} type={field.type} onChange={this.onChange} name={field.name} />
                 </InputWrapper>
               )
             })
