@@ -8,7 +8,7 @@ const Card = (props) => {
     <Link href={`/blog/${slug}`}>
       <div className="col-12 col-lg-6 card">
         <div className="row">
-          <div className="col-8">
+          <div className="col-7 mr-1" style={{border: '1px solid black'}}>
             <h2 className="card-title">{title}</h2>
             <p className="card-subtitle">{content} </p>
 

@@ -5,6 +5,7 @@ import Authentication from '../components/Authentication';
 import InputWrapper from '../components/InputWrapper';
 import Button from '../components/Button';
 import { Container } from 'react-bootstrap';
+import jwt_decode from 'jwt-decode'
 
 const fields = [
   {
@@ -21,7 +22,8 @@ class NewStory extends Component {
 
     this.state = {
       title: '',
-      content: ''
+      content: '',
+      userId: null
     }
   }
 
@@ -33,6 +35,15 @@ class NewStory extends Component {
     const { createStory } = this.props;
     createStory(this.state)
   }
+
+  componentDidMount() {
+    const token = localStorage.getItem('token');
+    var decoded = jwt_decode(token);
+    this.setState({
+      userId: decoded.UserId
+    })
+  }
+
 
   render() {
     return (

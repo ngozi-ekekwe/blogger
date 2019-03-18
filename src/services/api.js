@@ -60,7 +60,7 @@ export function getAllStories() {
 }
 
 export function createStory(story) {
-  const path = '/api/new-story';
+  const path = '/new-story';
   return apiPostRequest(path, story)
 }
 

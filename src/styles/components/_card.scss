@@ -29,4 +29,8 @@
   font-size: 14px;
   color: grey;
   font-family: 'Roboto';
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
 }

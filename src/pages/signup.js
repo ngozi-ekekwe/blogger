@@ -46,7 +46,8 @@ class Signup extends Component {
       lastName: '',
       bio: '',
       email: '',
-      password: ''
+      password: '',
+      loading: false,
     }
   }
 
@@ -55,6 +56,7 @@ class Signup extends Component {
   }
 
   onClick = () => {
+    this.setState({loading: true})
     const { createUser } = this.props;
     return createUser(this.state)
   }
@@ -62,7 +64,7 @@ class Signup extends Component {
   render() {
     return (
       <DefaultLayout>
-        <Authentication title="Sign Up" buttonText="Sign up" onButtonClick={this.onClick}>
+        <Authentication title="Sign Up" buttonText="Sign up" onButtonClick={this.onClick} loading={this.state.loading}>
           {
             fields.map((field, i) => {
               return (

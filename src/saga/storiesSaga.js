@@ -1,4 +1,5 @@
 import { put, take, call } from 'redux-saga/effects';
+import Router from 'next/router'
 
 import * as storiesActions from '../stores/actions/storyActions';
 
@@ -19,7 +20,7 @@ export function* createStorySaga(action) {
   try{
     const story = yield call(createStory, action);
     const newStory = story.title ? story : [];
-    yield put(storiesActions.createStorySuccess(newStory))
+    yield put(Router.push('/blogs'))
   }catch(err) {
     yield put(storiesActions.createStoryFailure(err))
   }

@@ -1,4 +1,5 @@
 import React from 'react';
+import Router from 'next/router';
 import Button from './Button'
 
 const LandingScreen = () => {
@@ -11,7 +12,7 @@ const LandingScreen = () => {
           <p>We'll deliver the best stories amd the ideas on the topics you care about most straight to your homepage, app or inbox</p>
         </div>
         <div className="button-container">
-          <Button title="Get Started" /> 
+          <Button title="Get Started" onClick={() =>Router.push('/login')} /> 
         </div>
       </div>
     </div>

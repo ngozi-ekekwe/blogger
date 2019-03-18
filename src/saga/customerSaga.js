@@ -1,5 +1,5 @@
 import { put, take, call } from 'redux-saga/effects';
-import Router from 'next/router'
+import Router from 'next/router';
 
 
 import * as userActions from '../stores/actions/userActions';
@@ -33,7 +33,7 @@ export function* createUserSaga(action) {
   try {
     const user = yield call(createUser, action)
     const newUser = user.token ? user : []
-    yield put(userActions.createUserSuccess, newUser)
+    yield put(Router.push('/login'))
   }
   catch(err) {
     yield put(userActions.createUserFailure(err))
