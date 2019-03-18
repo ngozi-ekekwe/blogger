@@ -6,7 +6,6 @@ import Button from '../components/Button';
 import { Container } from 'react-bootstrap';
 import jwt_decode from 'jwt-decode';
 import Loader from '../components/Loader';
-import decodeToken from '../lib/validateToken'
 
 class NewStory extends Component {
 
