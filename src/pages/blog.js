@@ -22,10 +22,11 @@ class Blog extends Component {
   render() {
     const { story } = this.props;
 
+
     return (
       <DefaultLayout>
         <Container>
-          <BlogHeader user={story[0].id} />
+          <BlogHeader story={story} />
           <p className="blog-content">
             {story[0] && story[0].content}
           </p>

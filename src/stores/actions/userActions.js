@@ -50,3 +50,9 @@ export const loginUserFailure = (error) => {
     type: types.LOGIN_FAILURE
   }
 }
+
+export const getUserSuccess = (user) => {
+  return {
+    type: types.GET_USER_SUCCESS, user
+  }
+}

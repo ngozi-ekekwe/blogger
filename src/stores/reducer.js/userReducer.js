@@ -23,6 +23,13 @@ export default function userReducer(state = initialState.user, action) {
         isAuthenticated: false
       }
     }
+
+    case types.GET_USER_SUCCESS: {
+      return {
+        ...state,
+        user: action.user
+      }
+    }
     default: {
       return state;
     }

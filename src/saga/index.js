@@ -1,5 +1,5 @@
 import { all, fork } from 'redux-saga/effects';
-import { watchLoginUser, watchCreateUser } from './customerSaga'
+import { watchLoginUser, watchCreateUser, watchGetUserSaga } from './customerSaga'
 import { watchListAllStories, watchCreateStories, watchGetStorySaga } from './storiesSaga';
 
 
@@ -10,6 +10,7 @@ export default function* rootSaga() {
     fork(watchListAllStories),
     fork(watchCreateUser),
     fork(watchCreateStories),
-    fork(watchGetStorySaga)
+    fork(watchGetStorySaga),
+    fork(watchGetUserSaga)
   ]);
 }
