@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DefaultLayout from '../layout/DefaultLayout';
-import Authentication from '../components/Authentication';
 import InputWrapper from '../components/InputWrapper';
 import Button from '../components/Button';
 import { Container } from 'react-bootstrap';
-import jwt_decode from 'jwt-decode'
-
-const fields = [
-  {
-    label: 'Title',
-    placeHolder: 'Enter your email',
-    type: 'text'
-  },
-]
+import jwt_decode from 'jwt-decode';
+import Loader from '../components/Loader';
+import decodeToken from '../lib/validateToken'
 
 class NewStory extends Component {
 
@@ -23,7 +16,8 @@ class NewStory extends Component {
     this.state = {
       title: '',
       content: '',
-      userId: null
+      userId: null,
+      loading: false
     }
   }
 
@@ -32,6 +26,7 @@ class NewStory extends Component {
   }
 
   onClick = (e) => {
+    this.setState({loading: true})
     const { createStory } = this.props;
     createStory(this.state)
   }
@@ -46,6 +41,7 @@ class NewStory extends Component {
 
 
   render() {
+    const { loading } = this.state;
     return (
       <DefaultLayout>
         <div className="mt-5">
@@ -55,7 +51,11 @@ class NewStory extends Component {
             </InputWrapper>
               <textarea placeholder="Write new story" name="content" onChange={this.onChange} />
             <div className="button-container mt-3">
+              { !loading ?
               <Button title="publish" onClick={this.onClick} />
+              :
+              <Loader loading />
+              }
             </div>
           </Container>
         </div>
@@ -64,16 +64,10 @@ class NewStory extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
-  return {
-    isAuthenticated: state.userReducer.isAuthenticated
-  };
-}
-
 const mapDispatchToProps = (dispatch) => {
   return ({
     createStory: (story) => dispatch({ type: 'CREATE_STORY', story })
   });
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewStory);
+export default connect(null, mapDispatchToProps)(NewStory);

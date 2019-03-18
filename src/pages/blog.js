@@ -6,7 +6,6 @@ import BlogHeader from '../components/BlogHeader';
 import { getSingleStory } from '../services/api';
 
 class Blog extends Component {
-
   static async getInitialProps({ req, query, params}) {
     const { slug = 'index' } = query;
     return { slug};
@@ -21,8 +20,6 @@ class Blog extends Component {
 
   render() {
     const { story } = this.props;
-
-
     return (
       <DefaultLayout>
         <Container>

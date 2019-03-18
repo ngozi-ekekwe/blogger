@@ -1,7 +1,6 @@
 import { put, take, call } from 'redux-saga/effects';
 import Router from 'next/router';
 
-
 import * as userActions from '../stores/actions/userActions';
 
 import { createUser, listAllUsers, loginUser, getUser} from '../services/api';

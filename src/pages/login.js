@@ -1,23 +1,9 @@
 import React , { Component } from 'react';
 import { connect } from 'react-redux';
 import DefaultLayout from '../layout/DefaultLayout';
-import Authentication from '../components/Authentication';
+import AuthContainer from '../components/AuthContainer';
 import InputWrapper from '../components/InputWrapper';
-
-const fields = [
-  {
-    label: 'Email',
-    name: 'email',
-    placeHolder: 'Enter your email',
-    type: 'text'
-  },
-  {
-    label: 'Password',
-    name: 'password',
-    placeHolder: 'password',
-    type: "password"
-  }
-]
+import { loginFields } from '../helpers/auth'
 
 class Login extends Component {
   constructor(props) {
@@ -43,9 +29,9 @@ class Login extends Component {
   render() {
     return (
       <DefaultLayout>
-        <Authentication title="Login" buttonText="Login" onButtonClick={this.onClick} loading={this.state.loading}>
+        <AuthContainer title="Login" buttonText="Login" onButtonClick={this.onClick} loading={this.state.loading}>
           {
-            fields.map((field) => {
+            loginFields.map((field) => {
               return (
                 <InputWrapper>
                   <input placeholder={field.placeHolder} type={field.type} onChange={this.onChange} name={field.name} />
@@ -53,7 +39,7 @@ class Login extends Component {
               )
             })
           }
-        </Authentication>
+        </AuthContainer>
       </DefaultLayout>
     );
   }

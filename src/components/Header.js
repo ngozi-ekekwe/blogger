@@ -3,11 +3,10 @@ import { Link } from '../routes';
 import '../styles/style.scss';
 
 class Header extends Component {
-
   state = {
     isAuthenticated: false
   }
-
+  
   logout = () => {
     const token = localStorage.removeItem('token');
   }
@@ -25,7 +24,7 @@ class Header extends Component {
     return (
       <header>
         <div className="nav-brand">
-          <Link route='/home'>FOOD BLOGGER</Link>
+          <Link route='/home'>STORY</Link>
         </div>
         {!isAuthenticated && <nav>
           <ul className="nav-item">
@@ -37,13 +36,13 @@ class Header extends Component {
         </nav>}
         {isAuthenticated && <nav>
           <ul className="nav-item">
-            <Link route='/new-story'><a>create story</a></Link>
+            <Link route='/new-story'><a>Create</a></Link>
           </ul>
           <ul className="nav-item">
-            <Link route='/blogs'><a>stories</a></Link>
+            <Link route='/blogs'><a>Stories</a></Link>
           </ul>
           <ul className="nav-item active">
-            <Link route='/signup'><a onClick={this.logout}>logout</a></Link>
+            <Link route='/signup'><a onClick={this.logout}>Logout</a></Link>
           </ul>
           <Link>
           <div className="avatar ml-5"></div>

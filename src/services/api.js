@@ -1,8 +1,7 @@
 import { agent } from 'superagent';
 import Settings from '../config/settings';
 
-const apiEndpoint = 'https://blogger-server.herokuapp.com'
-
+const apiEndpoint = Settings.apiEndpoint;
 export const endpoint = (path) => {
   if (path) {
     return `${apiEndpoint}/api/v1${path}`

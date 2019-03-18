@@ -15,7 +15,7 @@ class BlogHeader extends Component {
             { story[0]  && <Profile userId={story[0].userId } content={story[0].content}/>}
           </div>
         </div>
-        <div className="col-12 blog-image"></div>
+        <div className="col-12 blog-image" style={{backgroundImage: `url(https://source.unsplash.com/random)`}}></div>
       </div>
     );
   }

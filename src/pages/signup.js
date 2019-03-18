@@ -1,41 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DefaultLayout from '../layout/DefaultLayout';
-import Authentication from '../components/Authentication';
+import AuthContainer from '../components/AuthContainer';
 import InputWrapper from '../components/InputWrapper';
+import { signupFields } from '../helpers/auth'
 
-const fields = [
-  {
-    label: 'First Name',
-    placeHolder: 'Enter your first name',
-    type: 'text',
-    name: 'firstName'
-  },
-  {
-    label: 'Last Name',
-    placeHolder: 'Enter your last name',
-    type: 'text',
-    name: 'lastName'
-  },
-  {
-    label: 'Bio',
-    placeHolder: 'Enter your bio',
-    type: 'text',
-    name: 'bio'
-  },
-  {
-    label: 'Email',
-    placeHolder: 'Enter your email',
-    type: 'email',
-    name: 'email'
-  },
-  {
-    label: 'Password',
-    placeHolder: ' create password',
-    type: "password",
-    name: 'password'
-  }
-]
 
 class Signup extends Component {
   constructor(props) {
@@ -64,9 +33,9 @@ class Signup extends Component {
   render() {
     return (
       <DefaultLayout>
-        <Authentication title="Sign Up" buttonText="Sign up" onButtonClick={this.onClick} loading={this.state.loading}>
+        <AuthContainer title="Sign Up" buttonText="Sign up" onButtonClick={this.onClick} loading={this.state.loading}>
           {
-            fields.map((field, i) => {
+            signupFields.map((field, i) => {
               return (
                 <InputWrapper key={i}>
                   <input placeholder={field.placeHolder} type={field.type} onChange={this.onChange} name={field.name} />
@@ -74,16 +43,10 @@ class Signup extends Component {
               )
             })
           }
-        </Authentication>
+        </AuthContainer>
       </DefaultLayout>
     );
   }
-}
-
-function mapStateToProps(state, props) {
-  return {
-    isAuthenticated: state.userReducer.isAuthenticated
-  };
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -92,4 +55,4 @@ const mapDispatchToProps = (dispatch) => {
   });
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Signup);
+export default connect(null, mapDispatchToProps)(Signup);
