@@ -12,7 +12,7 @@ class BlogHeader extends Component {
             {
               story[0] &&<h1>{story[0].title}</h1>
             }
-            { story[0]  && <Profile userId={story[0].userId }/>}
+            { story[0]  && <Profile userId={story[0].userId } content={story[0].content}/>}
           </div>
         </div>
         <div className="col-12 blog-image"></div>

@@ -22,7 +22,7 @@ export function* loginUserSaga(action) {
   try {
     const userInfo = yield call(loginUser, action.user)
     userInfo.token && localStorage.setItem('token', userInfo.token)
-    yield put(Router.push('/home'));
+    yield put(Router.push('/new-story'));
   }
   catch(err) {
     yield put(userActions.loginUserFailure(err))

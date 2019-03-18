@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import readingTime from 'reading-time';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import { Link } from '../routes';
@@ -14,7 +15,7 @@ class Profile extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, content } = this.props;
     return (
       <div className="user-profile">
         <div className="flex-0">
@@ -24,7 +25,7 @@ class Profile extends Component {
         </div>
        { user && <div className="flex-1 profile-details">
             <p className="profile-name">{`${user.firstName} ${user.lastName}`}</p>
-            <div className="date">{`${moment(user.createdAt).format('MMMM Do YYYY')}  - ${10} mins read`}</div>
+            <div className="date">{`${moment(user.createdAt).format('MMMM Do YYYY')}  - ${readingTime(content).text}`}</div>
         </div>}
       </div>
     );

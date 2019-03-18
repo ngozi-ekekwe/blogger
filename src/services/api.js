@@ -5,7 +5,7 @@ const apiEndpoint = 'https://blogger-server.herokuapp.com'
 
 export const endpoint = (path) => {
   if (path) {
-    return `${apiEndpoint}/api${path}`
+    return `${apiEndpoint}/api/v1${path}`
   }
   return apiEndpoint;
 }
