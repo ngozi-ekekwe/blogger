@@ -7,7 +7,7 @@ class Authentication extends Component {
   }
 
   render() {
-    const { title, buttonText, children, onButtonClick } = this.props;
+    const { title, buttonText, children, onButtonClick, loading } = this.props;
     return (
       <div className="row authentication-section">
         <div className="col-12 col-lg-6 authentication-image"></div>
@@ -17,7 +17,7 @@ class Authentication extends Component {
             {children}
           </div>
           <div className="button-container">
-            <Button title={buttonText} onClick={onButtonClick} />   
+            <Button title={buttonText} onClick={onButtonClick} loading={loading} />   
           </div>       
         </div>
       </div>

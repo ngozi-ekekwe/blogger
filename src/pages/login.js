@@ -25,7 +25,8 @@ class Login extends Component {
 
     this.state = {
       email: null,
-      password: null
+      password: null,
+      loading: false,
     }
   }
 
@@ -34,6 +35,7 @@ class Login extends Component {
   }
 
   onClick = () => {
+    this.setState({loading: true})
     const { loginUser } = this.props;
     return loginUser(this.state)
   }
@@ -41,7 +43,7 @@ class Login extends Component {
   render() {
     return (
       <DefaultLayout>
-        <Authentication title="Login" buttonText="Login" onButtonClick={this.onClick}>
+        <Authentication title="Login" buttonText="Login" onButtonClick={this.onClick} loading={this.state.loading}>
           {
             fields.map((field) => {
               return (

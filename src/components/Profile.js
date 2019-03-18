@@ -32,7 +32,6 @@ class Profile extends Component {
 }
 
 function mapStateToProps(state, props) {
-  console.log(state, 'this is state')
   return {
     user: state.userReducer.user[0]
   };

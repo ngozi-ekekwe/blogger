@@ -37,10 +37,13 @@ class Header extends Component {
         </nav>}
         {isAuthenticated && <nav>
           <ul className="nav-item">
-            <Link route='/blogs'><a>Blogs</a></Link>
+            <Link route='/new-story'><a>create story</a></Link>
+          </ul>
+          <ul className="nav-item">
+            <Link route='/blogs'><a>stories</a></Link>
           </ul>
           <ul className="nav-item active">
-            <Link route='/signup'><a onClick={this.logout}>Logout</a></Link>
+            <Link route='/signup'><a onClick={this.logout}>logout</a></Link>
           </ul>
           <Link>
           <div className="avatar ml-5"></div>
