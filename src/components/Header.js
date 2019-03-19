@@ -1,53 +1,51 @@
 import React, { Component } from 'react';
 import { Link } from '../routes';
-import '../styles/style.scss';
 
 class Header extends Component {
   state = {
     isAuthenticated: false
   }
-  
+
   logout = () => {
     const token = localStorage.removeItem('token');
   }
 
   componentDidMount() {
     const token = localStorage.getItem('token')
-    if(token) {
+    if (token) {
       this.setState({
         isAuthenticated: true
       })
     }
   }
+
+  getRoutes = (isAuthenticated) => {
+    if (isAuthenticated) {
+      return [{ route: "/new-story", label: "Create" }, { route: "/blogs", label: "Stories" }];
+    }
+    return [{ route: "/login", label: "Sign in" }, { route: "/signup", label: "Get Started" }];
+  }
   render() {
     const { isAuthenticated } = this.state;
+    const routes = this.getRoutes(isAuthenticated);
     return (
       <header>
         <div className="nav-brand">
           <Link route='/home'>STORY</Link>
         </div>
-        {!isAuthenticated && <nav>
-          <ul className="nav-item">
-            <Link route='/login'><a>Sign in</a></Link>
+        <nav>{routes.map((route, i) => {
+          return (
+          <ul className="nav-item" key={`nav-item-${i}`}>
+            <Link route={route.route}><a>{route.label}</a></Link>
+          </ul>          
+        )
+        })}
+        { isAuthenticated && <ul className="nav-item active">
+            <a href="/login" onClick={this.logout}>Logout</a>
           </ul>
-          <ul className="nav-item active">
-            <Link route='/signup'><a>Get Started</a></Link>
-          </ul>
-        </nav>}
-        {isAuthenticated && <nav>
-          <ul className="nav-item">
-            <Link route='/new-story'><a>Create</a></Link>
-          </ul>
-          <ul className="nav-item">
-            <Link route='/blogs'><a>Stories</a></Link>
-          </ul>
-          <ul className="nav-item active">
-            <Link route='/signup'><a onClick={this.logout}>Logout</a></Link>
-          </ul>
-          <Link>
-          <div className="avatar ml-5"></div>
-        </Link>
-        </nav>}
+        }
+        </nav>
+        
       </header>
     );
   }

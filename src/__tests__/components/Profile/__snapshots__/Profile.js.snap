@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile Get the users profile  1`] = `
+<div
+  className="user-profile"
+>
+  <div
+    className="flex-0"
+  >
+    <LinkRoutes>
+      <div
+        className="avatar"
+      />
+    </LinkRoutes>
+  </div>
+  <div
+    className="flex-1 profile-details"
+  >
+    <p
+      className="profile-name"
+    >
+      undefined undefined
+    </p>
+    <div
+      className="date"
+    >
+      March 19th 2019  - 1 min read
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Profile renders the component it renders the component correctly 1`] = `
+<div
+  className="user-profile"
+>
+  <div
+    className="flex-0"
+  >
+    <LinkRoutes>
+      <div
+        className="avatar"
+      />
+    </LinkRoutes>
+  </div>
+  <div
+    className="flex-1 profile-details"
+  >
+    <p
+      className="profile-name"
+    >
+      undefined undefined
+    </p>
+    <div
+      className="date"
+    >
+      March 19th 2019  - 1 min read
+    </div>
+  </div>
+</div>
+`;

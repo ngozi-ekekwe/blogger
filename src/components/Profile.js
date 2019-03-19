@@ -4,7 +4,7 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 import { Link } from '../routes';
 
-class Profile extends Component {
+export class Profile extends Component {
   constructor(props) {
     super(props);
   }
