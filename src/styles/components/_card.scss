@@ -1,0 +1,36 @@
+.card {
+  // border: 1px solid red;
+  margin-top: 1rem;
+  cursor: pointer;
+  // margin-right: 20px;
+  height: 150px;
+  // line-height: 150px;
+}
+
+.card-image {
+  height: 150px;
+  background-image: url('/static/yellow.jpg');
+  background-size: cover;
+}
+
+.card-listing {
+  margin-top: 3rem;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 16px;
+  padding-top: 1rem;
+  font-family: 'Roboto';
+}
+
+.card-subtitle {
+  margin-top: 0.5rem;
+  font-size: 14px;
+  color: grey;
+  font-family: 'Roboto';
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
